@@ -50,11 +50,11 @@
 ```bash
 # Поместите файл в директорию правил Cursor
 mkdir -p .cursor/rules
-cp mandatory_behavioral_firewall.md .cursor/rules/
+cp MANDATORY_BEHAVIORAL_FIREWALL.mdc .cursor/rules/
 ```
 
 ### 2. Настройка в Cursor IDE
-1. **Откройте файл** `.cursor/rules/mandatory_behavioral_firewall.md` в Cursor
+1. **Откройте файл** `.cursor/rules/MANDATORY_BEHAVIORAL_FIREWALL.mdc` в Cursor
 2. **Проверьте шапку файла** - убедитесь что установлено подключение **"Always"**
 3. **Перезапустите Cursor** для применения правил
 
@@ -78,7 +78,7 @@ project/
 │       │   ├── Level4/
 │       │   ├── Phases/
 │       │   └── visual-maps/
-│       └── mandatory_behavioral_firewall.md
+│       └── mandatory_behavioral_firewall.mdc
 ├── memory-bank/
 │   ├── tasks.md
 │   ├── progress.md
