@@ -130,6 +130,7 @@ let entity = commands.spawn(MyComponent);
 - **WebAssembly приложений**
 - **Асинхронных сервисов** на Tokio
 - **UI приложений** на Dioxus
+- **MCP-серверов** на Rust с Model Context Protocol
 - **REST API сервисов** с автоматической документацией
 - **GraphQL серверов** с type-safe схемами
 - **Микросервисов** с Tower middleware
