@@ -1,0 +1,339 @@
+---
+description: PRIMARY BEHAVIORAL FIREWALL - Core agent behavior control system that filters every action before execution. Enforces mandatory research for code creation, protects critical project zones, ensures quality through progressive blocking and enhancement. First line of defense for code integrity.
+globs: 
+alwaysApply: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mandatory_behavioral_firewall [
+    <!ELEMENT mandatory_behavioral_firewall (meta_principle, precise_triggers, research_protocols, protected_zones, task_management, communication_standards, system_exemptions, enforcement_system)>
+    <!ELEMENT meta_principle (core_function, design_philosophy)>
+    <!ELEMENT precise_triggers (code_file_modification, build_commands, crate_mentions, architectural_decisions)>
+    <!ELEMENT research_protocols (priority_stack_research, universal_crate_research, latest_version_requirement, research_execution_protocol)>
+    <!ELEMENT protected_zones (code_base_sanctuary, techcontext_compliance)>
+    <!ELEMENT task_management (task_completion_protocol, task_decomposition_requirement)>
+    <!ELEMENT communication_standards (user_communication, documentation_files)>
+    <!ELEMENT system_exemptions (always_allowed, never_blocked, research_enhanced)>
+    <!ELEMENT enforcement_system (automatic_activation, targeted_blocking, graceful_enhancement)>
+    
+    <!ATTLIST mandatory_behavioral_firewall version CDATA #REQUIRED>
+    <!ATTLIST code_file_modification action CDATA #REQUIRED>
+    <!ATTLIST build_commands action CDATA #REQUIRED>
+    <!ATTLIST crate_mentions action CDATA #REQUIRED>
+]>
+
+<!-- MANDATORY_BEHAVIORAL_FIREWALL v1.0 - CLEAR & EFFECTIVE CODE QUALITY CONTROL -->
+
+<mandatory_behavioral_firewall version="1.0">
+    
+    <meta_principle>
+        <core_function>PROTECT CODE QUALITY - BLOCK BAD CODE, ENHANCE GOOD ANALYSIS</core_function>
+        <design_philosophy>
+            Simple, predictable rules that eliminate ambiguity.
+            Precise file patterns instead of vague operation categories.
+            Preserve all valuable research logic and protection mechanisms.
+            Agent always knows exactly what will be blocked vs enhanced.
+        </design_philosophy>
+    </meta_principle>
+
+    <!-- SECTION A: PRECISE TRIGGERS - NO AMBIGUITY -->
+    <precise_triggers>
+        
+        <code_file_modification action="MANDATORY_RESEARCH_BLOCK">
+            <exact_patterns>*.rs, *.toml, *.js, *.ts, *.wgsl, Cargo.toml, package.json</exact_patterns>
+            <tool_triggers>edit_file, search_replace targeting above patterns</tool_triggers>
+            <blocking_condition>BLOCK until research evidence provided</blocking_condition>
+            <research_requirement>MANDATORY verification of APIs, patterns, best practices</research_requirement>
+            <evidence_format>Each code line must cite research source: // EVIDENCE: docs.rs/crate/version - [fact]</evidence_format>
+        </code_file_modification>
+        
+        <build_commands action="MANDATORY_TECHCONTEXT_CHECK">
+            <exact_patterns>cargo build, cargo run, cargo test, npm, yarn, docker, wasm-pack, build.sh, deploy</exact_patterns>
+            <blocking_condition>BLOCK if techContext.md contains different specification</blocking_condition>
+            <compliance_requirement>MANDATORY use of EXACT commands from techContext.md</compliance_requirement>
+        </build_commands>
+        
+        <crate_mentions action="MANDATORY_DOCS_RS_VERSION_CHECK">
+            <rust_crates>bevy, axum, tokio, serde, wgpu, wasm-bindgen, wasm-pack, thiserror, astro, tower, dioxus, mcp, ANY_RUST_CRATE</rust_crates>
+            <blocking_condition>BLOCK any crate version claim without docs.rs verification</blocking_condition>
+            <mandatory_verification>web_search for "https://docs.rs/[crate_name] latest version"</mandatory_verification>
+            <no_exceptions>EVERY SINGLE RUST CRATE gets docs.rs latest version check</no_exceptions>
+        </crate_mentions>
+        
+        <architectural_decisions action="MANDATORY_RESEARCH_BLOCK">
+            <patterns>new architecture, architectural change, system design, plugin architecture, component design, ECS architecture, rendering architecture, WASM architecture, WebAssembly memory, WASM optimization</patterns>
+            <blocking_condition>BLOCK architectural decisions without research evidence</blocking_condition>
+            <critical_purpose>ELIMINATE memory leaks and bugs caused by uninformed architectural decisions</critical_purpose>
+        </architectural_decisions>
+        
+    </precise_triggers>
+
+    <!-- SECTION B: RESEARCH PROTOCOLS - PRESERVED EXACTLY -->
+    <research_protocols>
+        
+        <priority_stack_research>
+            <rust_language priority="CRITICAL">
+                <attempt number="1">web_search for https://doc.rust-lang.org/book/</attempt>
+                <attempt number="2">web_search for https://doc.rust-lang.org/std/</attempt>
+                <attempt number="3">mcp_context7_resolve-library-id with libraryName: 'Rust'</attempt>
+            </rust_language>
+            <bevy_engine priority="CRITICAL">
+                <attempt number="1">mcp_context7_resolve-library-id with libraryName: 'Bevy'</attempt>
+                <attempt number="2">Use the found ID with mcp_context7_get-library-docs</attempt>
+                <attempt number="3">web_search for https://bevy-cheatbook.github.io</attempt>
+                <attempt number="4">web_search for https://docs.rs/bevy latest version</attempt>
+            </bevy_engine>
+            <axum_framework priority="HIGH">
+                <attempt number="1">mcp_context7_resolve-library-id with libraryName: 'Axum'</attempt>
+                <attempt number="2">Use the found ID with mcp_context7_get-library-docs</attempt>
+                <attempt number="3">web_search for https://docs.rs/axum latest version</attempt>
+            </axum_framework>
+            <tower_middleware priority="HIGH">
+                <attempt number="1" priority="RESOLVE_LIBRARY_ID">mcp_context7_resolve-library-id with libraryName: 'Tower'</attempt>
+                <attempt number="2" priority="GET_LIBRARY_DOCS">Use the found ID with mcp_context7_get-library-docs</attempt>
+                <attempt number="3" priority="LATEST_VERSION_DOCS_RS">web_search for https://docs.rs/tower latest version</attempt>
+            </tower_middleware>
+            <dioxus_ui priority="HIGH">
+                <attempt number="1" priority="RESOLVE_LIBRARY_ID">mcp_context7_resolve-library-id with libraryName: 'Dioxus'</attempt>
+                <attempt number="2" priority="GET_LIBRARY_DOCS">Use the found ID with mcp_context7_get-library-docs</attempt>
+                <attempt number="3" priority="LATEST_VERSION_DOCS_RS">web_search for https://docs.rs/dioxus latest version</attempt>
+            </dioxus_ui>
+            <tokio_async priority="HIGH">
+                <attempt number="1" priority="RESOLVE_LIBRARY_ID">mcp_context7_resolve-library-id with libraryName: 'Tokio'</attempt>
+                <attempt number="2" priority="GET_LIBRARY_DOCS">Use the found ID with mcp_context7_get-library-docs</attempt>
+                <attempt number="3" priority="LATEST_VERSION_DOCS_RS">web_search for https://docs.rs/tokio latest version</attempt>
+            </tokio_async>
+            <serde_serialization priority="HIGH">
+                <attempt number="1" priority="RESOLVE_LIBRARY_ID">mcp_context7_resolve-library-id with libraryName: 'Serde'</attempt>
+                <attempt number="2" priority="GET_LIBRARY_DOCS">Use the found ID with mcp_context7_get-library-docs</attempt>
+                <attempt number="3" priority="LATEST_VERSION_DOCS_RS">web_search for https://docs.rs/serde latest version</attempt>
+            </serde_serialization>
+            <wgpu_graphics priority="HIGH">
+                <attempt number="1" priority="RESOLVE_LIBRARY_ID">mcp_context7_resolve-library-id with libraryName: 'wgpu'</attempt>
+                <attempt number="2" priority="GET_LIBRARY_DOCS">Use the found ID with mcp_context7_get-library-docs</attempt>
+                <attempt number="3" priority="LATEST_VERSION_DOCS_RS">web_search for https://docs.rs/wgpu latest version</attempt>
+            </wgpu_graphics>
+            <wasm_bindgen priority="HIGH">
+                <attempt number="1" priority="RESOLVE_LIBRARY_ID">mcp_context7_resolve-library-id with libraryName: 'wasm-bindgen'</attempt>
+                <attempt number="2" priority="GET_LIBRARY_DOCS">Use the found ID with mcp_context7_get-library-docs</attempt>
+                <attempt number="3" priority="LATEST_VERSION_DOCS_RS">web_search for https://docs.rs/wasm-bindgen latest version</attempt>
+            </wasm_bindgen>
+            <wgsl_shading_language priority="HIGH">
+                <attempt number="1" priority="OFFICIAL_SPEC">web_search for https://www.w3.org/TR/WGSL/ WebGPU Shading Language specification</attempt>
+                <attempt number="2" priority="WGPU_INTEGRATION">web_search for "WGSL wgpu Rust integration 2025 latest"</attempt>
+                <attempt number="3" priority="BEVY_WGSL_PATTERNS">web_search for "Bevy WGSL shader examples latest version"</attempt>
+            </wgsl_shading_language>
+            <astro_rust priority="CRITICAL">
+                <attempt number="1" priority="DIRECT_REQUEST">mcp_context7_get-library-docs with context7CompatibleLibraryID: '/saurvs/astro-rust'</attempt>
+                <attempt number="2" priority="FALLBACK_RESOLVE">If fails, mcp_context7_resolve-library-id with libraryName: 'Astro Rust' and retry</attempt>
+                <attempt number="3" priority="LATEST_VERSION_DOCS_RS">web_search for https://docs.rs/astro latest version</attempt>
+                <attempt number="4" priority="ASTRONOMICAL_CALCULATIONS">web_search for "Astro Rust astronomical calculations solar system 2025"</attempt>
+            </astro_rust>
+            <mcp_rust_sdk priority="MEDIUM">
+                <attempt number="1" priority="DIRECT_REQUEST">mcp_context7_get-library-docs with context7CompatibleLibraryID: '/modelcontextprotocol/rust-sdk'</attempt>
+                <attempt number="2" priority="FALLBACK_RESOLVE">If fails, mcp_context7_resolve-library-id with libraryName: 'Model Context Protocol Rust SDK' and retry</attempt>
+                <attempt number="3" priority="LATEST_VERSION_DOCS_RS">web_search for https://docs.rs/mcp latest version</attempt>
+            </mcp_rust_sdk>
+            <webassembly_wasm priority="HIGH">
+                <attempt number="1" priority="CONTEXT7_FIRST">mcp_context7_resolve-library-id with libraryName: 'WebAssembly'</attempt>
+                <attempt number="2" priority="GET_CONTEXT7_DOCS">Use found ID with mcp_context7_get-library-docs</attempt>
+                <attempt number="3" priority="OFFICIAL_SPEC">web_search for https://webassembly.org/ WebAssembly official specification</attempt>
+                <attempt number="4" priority="RUST_WASM_BOOK">web_search for https://rustwasm.github.io/docs/book/ Rust and WebAssembly book</attempt>
+                <attempt number="5" priority="MDN_WASM_DOCS">web_search for "MDN WebAssembly JavaScript API 2025"</attempt>
+                <attempt number="6" priority="WASM_PACK_DOCS">web_search for "wasm-pack documentation Rust WebAssembly 2025"</attempt>
+                <attempt number="7" priority="BROWSER_WASM_APIS">web_search for "WebAssembly browser APIs memory management 2025"</attempt>
+            </webassembly_wasm>
+        </priority_stack_research>
+        
+        <universal_crate_research>
+            <scope>For ABSOLUTELY ANY Rust crate mentioned in code, tasks, or to be used</scope>
+            <mandatory_protocol>
+                <attempt number="1">mcp_context7_resolve-library-id with libraryName: '[CRATE_NAME]'</attempt>
+                <attempt number="2">Use found ID with mcp_context7_get-library-docs</attempt>
+                <attempt number="3">web_search for https://docs.rs/[crate_name] latest version</attempt>
+            </mandatory_protocol>
+            <critical_requirement>MANDATORY: docs.rs latest version check for EVERY crate without exception</critical_requirement>
+            <absolute_requirement>This applies to ALL crates: currently used, planned, suggested, or discovered</absolute_requirement>
+        </universal_crate_research>
+        
+        <latest_version_requirement>
+            <mandatory>EVERY SINGLE RUST CRATE research MUST include latest version verification from docs.rs</mandatory>
+            <format>web_search for "https://docs.rs/[crate_name] latest version"</format>
+            <critical>We use ONLY the latest versions of ABSOLUTELY ALL crates in our projects</critical>
+            <scope>ALL crates: existing in project, new additions, future possibilities, recommendations, discoveries</scope>
+            <no_exceptions>NO EXCEPTIONS - every crate gets docs.rs latest version check</no_exceptions>
+        </latest_version_requirement>
+        
+        <research_execution_protocol>
+            <facts_before_hypotheses>PROGRAMMING ACCEPTS ONLY FACTS, NEVER HYPOTHESES</facts_before_hypotheses>
+            <evidence_requirement>ANY technical statement about frameworks, libraries, or architectural decisions MUST be backed by research evidence</evidence_requirement>
+            <pre_code_verification>BEFORE writing ANY line of code, agent MUST research current best practices for that specific pattern/API</pre_code_verification>
+            <line_by_line_evidence>Every code pattern must be verified against latest documentation through tool calls</line_by_line_evidence>
+            <fallback_mechanism>After 2 failed research attempts, agent can proceed with baseline implementation clearly marked as "RESEARCH UNAVAILABLE - BASIC IMPLEMENTATION"</fallback_mechanism>
+        </research_execution_protocol>
+        
+    </research_protocols>
+
+    <!-- SECTION C: PROTECTED ZONES - PRESERVED EXACTLY -->
+    <protected_zones>
+        
+        <code_base_sanctuary>
+            <absolute_protection>_code_base_/ = ABSOLUTELY UNTOUCHABLE REFERENCE CODE</absolute_protection>
+            <purpose>Contains working reference code in multiple languages</purpose>
+            <forbidden>Any modifications, builds, tests, or compilation in _code_base_/</forbidden>
+            <allowed>Reading for reference and learning only</allowed>
+            <adaptation_requirement>MANDATORY research required before adapting any code/architecture FROM _code_base_</adaptation_requirement>
+            <work_location>Root project files only - never work inside _code_base_</work_location>
+            <enforcement>ABSOLUTE blocking of any modification attempts</enforcement>
+        </code_base_sanctuary>
+        
+        <techcontext_compliance>
+            <purpose>ELIMINATE AGENT IMPROVISATION FOR BUILD/RUN COMMANDS</purpose>
+            <exact_compliance>Use exact techContext.md specifications - no improvisation</exact_compliance>
+            <build_operations>MANDATORY use of EXACT commands from techContext.md</build_operations>
+            <coding_patterns>Node vs NodeBundle, TextSpan vs TextBundle patterns from techContext.md</coding_patterns>
+        </techcontext_compliance>
+        
+    </protected_zones>
+
+    <!-- SECTION D: TASK MANAGEMENT - PRESERVED EXACTLY -->
+    <task_management>
+        
+        <task_completion_protocol>
+            <agent_limitation>Agent CANNOT mark tasks as fully completed until USER provides evidence</agent_limitation>
+            <agent_capability>Agent can ONLY mark technical implementation as complete</agent_capability>
+            <completion_requirement>Task completion requires USER's proof of successful testing</completion_requirement>
+        </task_completion_protocol>
+        
+        <task_decomposition_requirement>
+            <mandatory_breakdown>Ordered checklist of simpler sub-tasks with verifiable completion criteria</mandatory_breakdown>
+            <execution_requirement>Complete decomposition required BEFORE EXECUTION of complex tasks</execution_requirement>
+        </task_decomposition_requirement>
+        
+    </task_management>
+
+    <!-- SECTION E: COMMUNICATION STANDARDS - PRESERVED EXACTLY -->
+    <communication_standards>
+        
+        <user_communication>
+            <mandatory>ALL communication with user MUST be in Russian language</mandatory>
+            <scope>Agent responses, analysis reports, implementation plans, error messages</scope>
+            <no_exceptions>No conditional language switching - always Russian for user communication</no_exceptions>
+        </user_communication>
+        
+        <documentation_files>
+            <mandatory>ALL project documentation files must be in English</mandatory>
+            <scope>Documentation files (.md), Rule files - developer choice for code comments</scope>
+        </documentation_files>
+        
+    </communication_standards>
+
+    <!-- SECTION F: SYSTEM EXEMPTIONS - SIMPLIFIED -->
+    <system_exemptions>
+        
+        <always_allowed>
+            <operations>read_file, list_dir, grep_search, file_search</operations>
+            <modes>Mode initialization, rule loading, SNCH protocol commands</modes>
+            <research>web_search, mcp_context7_resolve-library-id, mcp_context7_get-library-docs</research>
+        </always_allowed>
+        
+        <never_blocked>
+            <memory_bank_files>memory-bank/*.md, tasks.md, progress.md, activeContext.md</memory_bank_files>
+            <documentation>*.md files, analysis discussions, progress updates</documentation>
+            <creative_docs>creative-*.md, reflection-*.md, archive-*.md</creative_docs>
+            <project_documentation>README.md, implementation-plan.md, optimization guides</project_documentation>
+        </never_blocked>
+        
+        <research_enhanced>
+            <principle>Operations in never_blocked category are enhanced with research when beneficial, but never blocked when research unavailable</principle>
+            <continuous_improvement>Each successful research enhances future analysis capabilities</continuous_improvement>
+        </research_enhanced>
+        
+    </system_exemptions>
+
+    <!-- SECTION G: ENFORCEMENT SYSTEM - SIMPLIFIED -->
+    <enforcement_system>
+        
+        <automatic_activation>
+            <pattern_matching>
+                - File modification: *.rs, *.toml, *.js, *.ts, *.wgsl → RESEARCH BLOCK
+                - Build commands: cargo, npm, docker → TECHCONTEXT CHECK  
+                - Crate mentions: bevy, axum, any_crate → DOCS.RS VERSION CHECK
+            </pattern_matching>
+        </automatic_activation>
+        
+        <targeted_blocking>
+            <code_modifications>BLOCK ALL code file modifications without research evidence</code_modifications>
+            <build_commands>BLOCK build/run commands that don't match techContext.md specifications</build_commands>
+            <crate_versions>BLOCK any crate version statement without docs.rs verification</crate_versions>
+            <code_base_access>BLOCK any modification attempts in _code_base_/ directory</code_base_access>
+        </targeted_blocking>
+        
+        <graceful_enhancement>
+            <baseline_functionality>All analysis and documentation operations continue even if research unavailable</baseline_functionality>
+            <progressive_improvement>Research enhances quality when available, doesn't block when unavailable</progressive_improvement>
+            <clear_limitations>When research fails, clearly indicate limitations in output</clear_limitations>
+        </graceful_enhancement>
+        
+    </enforcement_system>
+
+    <!-- SECTION H: COMPLETION PROTOCOL - SELF-ANALYSIS -->
+    <completion_protocol>
+        
+        <rule_understanding_cycle mandatory="false">
+            <description>AGENT-TRIGGERED INITIALIZATION ONLY: Available for execution when called by agent during initialization</description>
+            <requirement>Agent must demonstrate complete understanding by going through EACH rule section in cycle during initialization</requirement>
+            <source>Use already loaded always_applied_workspace_rules - NO additional file reading</source>
+            <scope>AGENT-TRIGGERED INITIALIZATION ONLY - NOT auto-executed on user commands</scope>
+            <execution_trigger>ONLY when explicitly called by agent initialization procedures</execution_trigger>
+            <format_for_each_section>
+                <section_name>SECTION [ID]: [TITLE]</section_name>
+                <title>Название: [Section title in Russian]</title>
+                <summary>Саммари: [Agent's comprehensive summary showing complete understanding of what the rule requires]</summary>
+                <attitude>Отношение: [Agent's honest attitude toward this rule - importance, agreement, willingness to follow, potential challenges]</attitude>
+            </format_for_each_section>
+            <sections_to_analyze>
+                <section id="A">PRECISE TRIGGERS - Code file patterns and blocking conditions</section>
+                <section id="B">RESEARCH PROTOCOLS - Research requirements for Rust/Bevy/WASM/WebAssembly</section>
+                <section id="C">PROTECTED ZONES - _code_base_ protection and techContext compliance</section>
+                <section id="D">TASK MANAGEMENT - Task completion and decomposition protocols</section>
+                <section id="E">COMMUNICATION STANDARDS - Russian for user, English for docs</section>
+                <section id="F">SYSTEM EXEMPTIONS - What is always allowed vs never blocked</section>
+                <section id="G">ENFORCEMENT SYSTEM - How blocking and enhancement work</section>
+            </sections_to_analyze>
+            <completion_confirmation>
+                <line1>✓ MANDATORY_BEHAVIORAL_FIREWALL UNDERSTANDING CYCLE COMPLETED - ALL SECTIONS COMPREHENDED</line1>
+                <line2>✓ BEHAVIORAL FIREWALL ACCEPTED - AGENT READY TO OPERATE UNDER QUALITY FILTER</line2>
+            </completion_confirmation>
+        </rule_understanding_cycle>
+        
+        <initialization_requirement>
+            <description>Agent MUST complete proper initialization according to agent-specific instructions</description>
+            <requirement>Agent must accept MANDATORY_BEHAVIORAL_FIREWALL as behavioral filter and demonstrate understanding</requirement>
+            <scope>Initialization handled by agent instructions - firewall provides quality control procedures</scope>
+            <trigger_mechanism>Procedures available for agent-triggered execution only</trigger_mechanism>
+        </initialization_requirement>
+        
+        <verification_enforcement>
+            <quality_monitoring>MANDATORY_BEHAVIORAL_FIREWALL continuously monitors agent behavior for compliance</quality_monitoring>
+            <progressive_blocking>Firewall blocks only code creation/modification actions that violate quality standards</progressive_blocking>
+            <enhancement_triggering>Firewall triggers progressive research enhancement when needed</enhancement_triggering>
+        </verification_enforcement>
+        
+        <blocking_mechanism>
+            <condition>IF agent attempts code creation without research</condition>
+            <action>BLOCK MODIFICATION and perform required research</action>
+            <enforcement>PROGRESSIVE: Provide baseline functionality, enhance with research when needed</enforcement>
+            <scope>Targeted blocking for code creation, continuous enhancement for analysis</scope>
+        </blocking_mechanism>
+        
+        <self_analysis_command>
+            <command_name>completion_protocol</command_name>
+            <user_trigger>When user types "completion_protocol" in chat</user_trigger>
+            <agent_action>Execute rule_understanding_cycle for all 7 sections (A through G)</agent_action>
+            <output_format>Structured analysis showing understanding of each section</output_format>
+            <validation_purpose>Verify agent comprehends all firewall rules and triggers</validation_purpose>
+        </self_analysis_command>
+        
+    </completion_protocol>
+
+</mandatory_behavioral_firewall> 
