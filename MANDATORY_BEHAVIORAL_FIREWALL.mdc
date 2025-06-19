@@ -5,27 +5,25 @@ alwaysApply: true
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mandatory_behavioral_firewall [
-    <!ELEMENT mandatory_behavioral_firewall (meta_principle, precise_triggers, research_protocols, protected_zones, task_management, communication_standards, system_exemptions, enforcement_system, pre_execution_validation, mode_execution_under_firewall_control)>
+    <!ELEMENT mandatory_behavioral_firewall (meta_principle, precise_triggers, research_protocols, protected_zones, task_management, communication_standards, system_exemptions, enforcement_system)>
     <!ELEMENT meta_principle (core_function, design_philosophy)>
-    <!ELEMENT precise_triggers (code_file_modification, build_commands, build_command_validation, crate_mentions, architectural_decisions)>
+    <!ELEMENT precise_triggers (code_file_modification, build_commands, crate_mentions, architectural_decisions)>
     <!ELEMENT research_protocols (priority_stack_research, universal_crate_research, latest_version_requirement, research_execution_protocol)>
-    <!ELEMENT protected_zones (code_base_sanctuary, techcontext_compliance, techcontext_supremacy)>
+    <!ELEMENT protected_zones (code_base_sanctuary, techcontext_compliance)>
     <!ELEMENT task_management (task_completion_protocol, task_decomposition_requirement)>
     <!ELEMENT communication_standards (user_communication, documentation_files)>
     <!ELEMENT system_exemptions (always_allowed, never_blocked, research_enhanced)>
     <!ELEMENT enforcement_system (automatic_activation, targeted_blocking, graceful_enhancement)>
-    <!ELEMENT pre_execution_validation (build_command_checkpoint, validation_format)>
     
     <!ATTLIST mandatory_behavioral_firewall version CDATA #REQUIRED>
     <!ATTLIST code_file_modification action CDATA #REQUIRED>
     <!ATTLIST build_commands action CDATA #REQUIRED>
-    <!ATTLIST build_command_validation action CDATA #REQUIRED>
     <!ATTLIST crate_mentions action CDATA #REQUIRED>
 ]>
 
-<!-- MANDATORY_BEHAVIORAL_FIREWALL v1.3 - CLEAR & EFFECTIVE CODE QUALITY CONTROL WITH ENHANCED BUILD COMMAND CONTROL + MODE EXECUTION INTEGRATION -->
+<!-- MANDATORY_BEHAVIORAL_FIREWALL v1.0 - CLEAR & EFFECTIVE CODE QUALITY CONTROL -->
 
-<mandatory_behavioral_firewall version="1.3">
+<mandatory_behavioral_firewall version="1.0">
     
     <meta_principle>
         <core_function>PROTECT CODE QUALITY - BLOCK BAD CODE, ENHANCE GOOD ANALYSIS</core_function>
@@ -34,18 +32,7 @@ alwaysApply: true
             Precise file patterns instead of vague operation categories.
             Preserve all valuable research logic and protection mechanisms.
             Agent always knows exactly what will be blocked vs enhanced.
-            ABSOLUTE COMPLIANCE with techContext.md build commands.
         </design_philosophy>
-        <creative_excellence_through_constraints>
-            <quality_vs_mediocrity>These rules separate true craftsmanship from mediocre "good enough" code</quality_vs_mediocrity>
-            <research_driven_creativity>Real innovation comes from understanding current best practices, then improving upon them</research_driven_creativity>
-            <constraint_enables_focus>Limitations force creative solutions within proven frameworks instead of reinventing broken wheels</constraint_enables_focus>
-            <evidence_based_artistry>Master craftsmen study their materials - agent studies APIs, patterns, and ecosystem evolution</evidence_based_artistry>
-            <sustainable_creativity>Quick hacks create technical debt - disciplined approach creates lasting, elegant solutions</sustainable_creativity>
-            <professional_vs_amateur>Amateur approach: "make it work somehow" - Professional approach: "make it work correctly"</professional_vs_amateur>
-            <compound_excellence>Each research-backed decision compounds into exponentially better final products</compound_excellence>
-            <creative_confidence>Knowing you followed best practices gives freedom to push boundaries safely</creative_confidence>
-        </creative_excellence_through_constraints>
     </meta_principle>
 
     <!-- SECTION A: PRECISE TRIGGERS - NO AMBIGUITY -->
@@ -56,10 +43,7 @@ alwaysApply: true
             <tool_triggers>edit_file, search_replace targeting above patterns</tool_triggers>
             <blocking_condition>BLOCK until research evidence provided</blocking_condition>
             <research_requirement>MANDATORY verification of APIs, patterns, best practices</research_requirement>
-            <evidence_format>Each code block must have research-based comment explaining the approach:
-// EVIDENCE BLOCK: Based on [source] - [what was found]
-// RESEARCH: [specific finding from research] 
-// APPLICATION: [how this research finding was applied to current task]</evidence_format>
+            <evidence_format>Each code line must cite research source: // EVIDENCE: docs.rs/crate/version - [fact]</evidence_format>
         </code_file_modification>
         
         <build_commands action="MANDATORY_TECHCONTEXT_CHECK">
@@ -67,23 +51,6 @@ alwaysApply: true
             <blocking_condition>BLOCK if techContext.md contains different specification</blocking_condition>
             <compliance_requirement>MANDATORY use of EXACT commands from techContext.md</compliance_requirement>
         </build_commands>
-        
-        <build_command_validation action="MANDATORY_TECHCONTEXT_VERIFICATION">
-            <trigger>ANY command containing: cargo build, cargo run, npm, yarn, docker, ./build.sh, wasm-pack</trigger>
-            <mandatory_procedure>
-                1. FIRST: Read techContext.md build commands section
-                2. VALIDATE: Proposed command EXACTLY matches techContext.md specification
-                3. BLOCK: Any command that deviates from techContext.md, even with "good intentions"
-                4. EXECUTE: Only commands that are character-for-character identical to techContext.md
-            </mandatory_procedure>
-            <forbidden_behaviors>
-                - "Simplifying" build commands
-                - "Optimizing" build processes  
-                - "Alternative" approaches to build commands
-                - Adding extra flags "for better testing"
-                - Using direct cargo commands when build.sh is specified
-            </forbidden_behaviors>
-        </build_command_validation>
         
         <crate_mentions action="MANDATORY_DOCS_RS_VERSION_CHECK">
             <rust_crates>bevy, axum, tokio, serde, wgpu, wasm-bindgen, wasm-pack, thiserror, astro, tower, dioxus, mcp, ANY_RUST_CRATE</rust_crates>
@@ -98,33 +65,12 @@ alwaysApply: true
             <critical_purpose>ELIMINATE memory leaks and bugs caused by uninformed architectural decisions</critical_purpose>
         </architectural_decisions>
         
-        <workflow_completion action="GUIDED_COMPLETION_ENHANCEMENT">
-            <exact_patterns>workflow complete, mode complete, process finished, ready to proceed, validation complete, analysis done</exact_patterns>
-            <scope_clarification>INTERNAL workflow processes only - NOT project task completion</scope_clarification>
-            <task_vs_workflow_distinction>Task completion requires USER evidence (Section D) - Workflow completion is internal agent process</task_vs_workflow_distinction>
-            <enhancement_condition>ENHANCE completion with loaded workflow verification</enhancement_condition>
-            <guidance_requirement>VERIFY all loaded workflow steps executed before declaring completion</guidance_requirement>
-            <completion_verification>When agent loads rules via fetch_rules, ensure corresponding deliverables created</completion_verification>
-            <helper_philosophy>Guide agent to thorough completion without micromanaging specific steps</helper_philosophy>
-            <creative_completion>Support agent creativity in HOW they complete workflows, ensure THAT they complete workflows</creative_completion>
-        </workflow_completion>
-        
     </precise_triggers>
 
     <!-- SECTION B: RESEARCH PROTOCOLS - PRESERVED EXACTLY -->
     <research_protocols>
         
         <priority_stack_research>
-            <architectural_gold_standard>
-                <why_detailed_protocols_exist>These detailed protocols for specific crates are ARCHITECTURAL GOLD - they solve disambiguation problems that break projects</why_detailed_protocols_exist>
-                <bevy_disambiguation>Context7 might find Bevy UI library instead of Bevy Game Engine - wrong choice breaks entire 3D rendering pipeline</bevy_disambiguation>
-                <astro_disambiguation>Search might find Astro.js web framework instead of Astro Rust astronomical library - breaks solar system calculations</astro_disambiguation>
-                <tower_disambiguation>Could find tower-cli tool instead of Tower HTTP middleware - breaks web server architecture</tower_disambiguation>
-                <wgpu_disambiguation>Might find wgpu wrapper instead of core wgpu - breaks WebGPU/WASM rendering foundation</wgpu_disambiguation>
-                <stack_foundation>Each detailed protocol preserves YEARS of architectural decisions and prevents catastrophic misidentification</stack_foundation>
-                <time_investment_protection>Skipping these protocols can waste HOURS debugging "why does the same crate name behave differently"</time_investment_protection>
-                <professional_stack_curation>This is not bureaucracy - this is professional-grade stack curation that prevents amateur mistakes</professional_stack_curation>
-            </architectural_gold_standard>
             <rust_language priority="CRITICAL">
                 <attempt number="1">web_search for https://doc.rust-lang.org/book/</attempt>
                 <attempt number="2">web_search for https://doc.rust-lang.org/std/</attempt>
@@ -207,16 +153,6 @@ alwaysApply: true
             </mandatory_protocol>
             <critical_requirement>MANDATORY: docs.rs latest version check for EVERY crate without exception</critical_requirement>
             <absolute_requirement>This applies to ALL crates: currently used, planned, suggested, or discovered</absolute_requirement>
-            <why_even_stable_crates_need_verification>
-                <serde_example>Even "stable" serde changes - serde 1.0.210 had breaking serialization changes affecting WASM</serde_example>
-                <tokio_example>Tokio async runtime changes every few months - what worked in 1.35 breaks in 1.42</tokio_example>
-                <std_example>Rust std library gets new methods constantly - using outdated patterns when better ones exist</std_example>
-                <dependency_conflicts>Crate A@1.0 + Crate B@2.0 might conflict even if both seem "stable"</dependency_conflicts>
-                <agent_knowledge_gap>Agent training data is months old - "stable" crates had dozens of updates since training</agent_knowledge_gap>
-                <security_updates>Even mature crates get security patches - using outdated versions creates vulnerabilities</security_updates>
-                <architectural_stack_protection>Our specific Bevy+Astro+Tower+wgpu stack has TESTED INTEGRATION POINTS that generic research cannot discover</architectural_stack_protection>
-                <ecosystem_evolution_tracking>These detailed protocols track how our SPECIFIC stack evolves together, not just individual crates</ecosystem_evolution_tracking>
-            </why_even_stable_crates_need_verification>
         </universal_crate_research>
         
         <latest_version_requirement>
@@ -231,42 +167,13 @@ alwaysApply: true
             <facts_before_hypotheses>PROGRAMMING ACCEPTS ONLY FACTS, NEVER HYPOTHESES</facts_before_hypotheses>
             <evidence_requirement>ANY technical statement about frameworks, libraries, or architectural decisions MUST be backed by research evidence</evidence_requirement>
             <pre_code_verification>BEFORE writing ANY line of code, agent MUST research current best practices for that specific pattern/API</pre_code_verification>
-            <contextual_research_activation>
-                <smart_triggering>Agent doesn't research ALL crates at once - only those CURRENTLY RELEVANT to the active task</smart_triggering>
-                <code_context_driven>When editing Bevy rendering code → trigger Bevy research; When working with HTTP server → trigger Tower research</code_context_driven>
-                <task_specific_focus>Research protocols activate based on what agent is ACTUALLY working on, not speculatively</task_specific_focus>
-                <efficient_knowledge_gathering>This prevents information overload while ensuring critical knowledge is available when needed</efficient_knowledge_gathering>
-                <just_in_time_research>Quality research happens precisely when it can be applied, maximizing relevance and retention</just_in_time_research>
-            </contextual_research_activation>
-            <research_fuels_creativity>
-                <why_research_enables_great_code>Research is not bureaucracy - it's the fuel of true creativity</why_research_enables_great_code>
-                <artist_studies_masters>Great artists study the masters before creating masterpieces - great programmers study great code</artist_studies_masters>
-                <informed_innovation>You can only break rules effectively after understanding why they exist</informed_innovation>
-                <creative_building_blocks>Research provides sophisticated building blocks for elegant solutions</creative_building_blocks>
-                <avoiding_known_pitfalls>Studying existing solutions prevents wasting creativity on already-solved problems</avoiding_known_pitfalls>
-                <standing_on_giants>Research allows standing on giants' shoulders to reach higher creative peaks</standing_on_giants>
-                <pattern_recognition>Understanding ecosystem patterns enables recognizing when to follow vs when to innovate</pattern_recognition>
-                <confident_creativity>Knowing current best practices gives confidence to push boundaries safely</confident_creativity>
-            </research_fuels_creativity>
-            <technology_evolution_principle>
-                <rapid_change>Technologies and languages evolve rapidly - known approaches become outdated quickly</rapid_change>
-                <no_obvious_code>There is NO "obvious" or "simple" code that doesn't need verification</no_obvious_code>
-                <examples>
-                    - Rust 2024 edition changes (async, lifetimes, error handling)
-                    - Bevy 0.16 vs 0.15 breaking changes (ECS, rendering, assets)
-                    - WebAssembly spec updates affecting WASM targets
-                    - Browser API changes impacting web builds
-                </examples>
-                <agent_knowledge_decay>Agent's training knowledge becomes stale within months in fast-moving ecosystems</agent_knowledge_decay>
-                <verification_over_assumptions>Always verify "basic" patterns - they change more than complex ones</verification_over_assumptions>
-            </technology_evolution_principle>
             <line_by_line_evidence>Every code pattern must be verified against latest documentation through tool calls</line_by_line_evidence>
             <fallback_mechanism>After 2 failed research attempts, agent can proceed with baseline implementation clearly marked as "RESEARCH UNAVAILABLE - BASIC IMPLEMENTATION"</fallback_mechanism>
         </research_execution_protocol>
         
     </research_protocols>
 
-    <!-- SECTION C: PROTECTED ZONES - ENHANCED WITH TECHCONTEXT SUPREMACY -->
+    <!-- SECTION C: PROTECTED ZONES - PRESERVED EXACTLY -->
     <protected_zones>
         
         <code_base_sanctuary>
@@ -286,20 +193,6 @@ alwaysApply: true
             <coding_patterns>Node vs NodeBundle, TextSpan vs TextBundle patterns from techContext.md</coding_patterns>
         </techcontext_compliance>
         
-        <techcontext_supremacy>
-            <principle>techContext.md commands are SACRED and IMMUTABLE during execution</principle>
-            <clarification>USER-MANAGED means "don't modify the file", NOT "don't use the file"</clarification>
-            <mandatory_usage>If techContext.md specifies "./build.sh web", agent MUST use exactly that</mandatory_usage>
-            <zero_tolerance>No exceptions, no shortcuts, no "improvements" to specified build commands</zero_tolerance>
-            <core_truth>techContext.md is the SINGLE SOURCE OF TRUTH for all build/run commands</core_truth>
-            <creative_benefits_of_constraint>
-                <focus_enables_excellence>Following proven build patterns lets creativity focus on actual features, not infrastructure</focus_enables_excellence>
-                <constraint_as_springboard>Constraints become springboards for creative solutions within proven frameworks</constraint_as_springboard>
-                <reliability_enables_risk>Reliable build foundation enables taking creative risks in actual implementation</reliability_enables_risk>
-                <professional_creativity>True professionals work within constraints to create something extraordinary</professional_creativity>
-            </creative_benefits_of_constraint>
-        </techcontext_supremacy>
-        
     </protected_zones>
 
     <!-- SECTION D: TASK MANAGEMENT - PRESERVED EXACTLY -->
@@ -309,14 +202,6 @@ alwaysApply: true
             <agent_limitation>Agent CANNOT mark tasks as fully completed until USER provides evidence</agent_limitation>
             <agent_capability>Agent can ONLY mark technical implementation as complete</agent_capability>
             <completion_requirement>Task completion requires USER's proof of successful testing</completion_requirement>
-            <why_agent_cannot_declare_completion>
-                <environment_differences>Agent runs in simulation - user's actual environment may behave differently</environment_differences>
-                <hidden_failures>Code may compile but fail silently in specific user scenarios agent cannot test</hidden_failures>
-                <integration_issues>Feature works in isolation but breaks when integrated with user's existing setup</integration_issues>
-                <platform_specifics>macOS/Windows/Linux differences agent cannot fully simulate</platform_specifics>
-                <user_workflow>Only user knows if feature actually solves their real problem</user_workflow>
-                <false_confidence_prevention>Agent declaring "complete" without user testing creates dangerous overconfidence</false_confidence_prevention>
-            </why_agent_cannot_declare_completion>
         </task_completion_protocol>
         
         <task_decomposition_requirement>
@@ -333,14 +218,6 @@ alwaysApply: true
             <mandatory>ALL communication with user MUST be in Russian language</mandatory>
             <scope>Agent responses, analysis reports, implementation plans, error messages</scope>
             <no_exceptions>No conditional language switching - always Russian for user communication</no_exceptions>
-            <why_strict_russian_requirement>
-                <user_comfort>User thinks and processes information faster in their native language</user_comfort>
-                <cognitive_load>Switching between languages increases mental effort and reduces comprehension</cognitive_load>
-                <nuance_preservation>Complex technical concepts need native language nuance for accurate understanding</nuance_preservation>
-                <accessibility>Technical English creates barriers - user shouldn't struggle with language AND technical concepts</accessibility>
-                <consistency_importance>Language switching creates inconsistent experience and confusion</consistency_importance>
-                <code_vs_communication>Code is universal language - human communication should be in user's native language</code_vs_communication>
-            </why_strict_russian_requirement>
         </user_communication>
         
         <documentation_files>
@@ -381,7 +258,6 @@ alwaysApply: true
                 - File modification: *.rs, *.toml, *.js, *.ts, *.wgsl → RESEARCH BLOCK
                 - Build commands: cargo, npm, docker → TECHCONTEXT CHECK  
                 - Crate mentions: bevy, axum, any_crate → DOCS.RS VERSION CHECK
-                - Workflow completion: workflow complete, mode complete → GUIDED COMPLETION ENHANCEMENT
             </pattern_matching>
         </automatic_activation>
         
@@ -396,146 +272,11 @@ alwaysApply: true
             <baseline_functionality>All analysis and documentation operations continue even if research unavailable</baseline_functionality>
             <progressive_improvement>Research enhances quality when available, doesn't block when unavailable</progressive_improvement>
             <clear_limitations>When research fails, clearly indicate limitations in output</clear_limitations>
-            <workflow_completion_guidance>Guide agents to complete all loaded workflow steps without dictating specific implementation</workflow_completion_guidance>
-            <creative_support>Support agent creativity in HOW they complete workflows while ensuring THAT they complete workflows</creative_support>
         </graceful_enhancement>
         
     </enforcement_system>
 
-    <!-- SECTION H: PRE-EXECUTION VALIDATION - CRITICAL SECTION -->
-    <pre_execution_validation>
-        
-        <build_command_checkpoint>
-            <requirement>Before ANY build/run command execution</requirement>
-            <validation_steps>
-                1. Display proposed command
-                2. Display corresponding techContext.md specification  
-                3. Confirm EXACT match or BLOCK execution
-                4. No execution without explicit techContext.md compliance
-            </validation_steps>
-            <blocking_principle>ZERO TOLERANCE for command deviation</blocking_principle>
-            <why_zero_tolerance_for_commands>
-                <environment_fragility>Build environments are fragile - small flag changes break everything</environment_fragility>
-                <tested_configurations>techContext.md commands are tested and proven to work</tested_configurations>
-                <dependency_chains>Extra flags can trigger different dependency resolution breaking builds</dependency_chains>
-                <platform_compatibility>User-specified commands account for platform-specific requirements</platform_compatibility>
-                <debugging_complexity>Modified commands make it impossible to debug issues - "works on my machine" problem</debugging_complexity>
-                <agent_overconfidence>Agent "improvements" often introduce subtle bugs agent cannot detect</agent_overconfidence>
-            </why_zero_tolerance_for_commands>
-        </build_command_checkpoint>
-        
-        <validation_format>
-            <compliance_check>Verify proposed command EXACTLY matches techContext.md specification</compliance_check>
-            <execution_gate>Commands execute ONLY after validation passes</execution_gate>
-        </validation_format>
-        
-        <emergency_override>
-            <trigger>When techContext.md commands are technically impossible on current platform</trigger>
-            <conditions>
-                - Platform incompatibility (e.g., Windows vs Linux specific commands)
-                - Missing required dependencies that cannot be installed
-                - Hardware limitations preventing standard execution
-                - File system permission issues beyond agent control
-            </conditions>
-            <mandatory_procedure>
-                1. DOCUMENT: Exact technical reason why techContext.md command fails
-                2. RESEARCH: Alternative approach that maintains same functional outcome
-                3. JUSTIFY: Why the override preserves techContext.md intent
-                4. EXECUTE: With clear marking "EMERGENCY_OVERRIDE: [reason]"
-                5. REPORT: Full override justification to user
-            </mandatory_procedure>
-            <override_format>
-                EMERGENCY OVERRIDE ACTIVATED
-                ORIGINAL_REQUIRED: [exact techContext.md command]
-                TECHNICAL_BLOCKER: [specific technical reason]
-                ALTERNATIVE_COMMAND: [proposed override command]
-                FUNCTIONAL_EQUIVALENCE: [how it maintains same outcome]
-                JUSTIFICATION: [why this preserves techContext.md intent]
-            </override_format>
-            <strict_limitation>Override ONLY for technical impossibility, NEVER for convenience or preference</strict_limitation>
-        </emergency_override>
-        
-    </pre_execution_validation>
-
-    <!-- SECTION I: MODE EXECUTION UNDER FIREWALL CONTROL -->
-    <mode_execution_under_firewall_control>
-        
-        <execution_hierarchy>
-            <primary_workflow>mode_specific_rule provides the main workflow steps</primary_workflow>
-            <firewall_overlay>MANDATORY_BEHAVIORAL_FIREWALL adds quality control requirements to each step</firewall_overlay>
-            <integration_principle>Execute mode_specific_rule steps WITH firewall quality gates enforced</integration_principle>
-        </execution_hierarchy>
-        
-        <when_firewall_blocks_action>
-            <code_modification_block>
-                <trigger>Attempt to edit *.rs, *.toml, *.js, *.ts, *.wgsl files</trigger>
-                <automatic_response>FIRST: Perform mandatory research for the planned changes</automatic_response>
-                <research_requirement>Use web_search, mcp_context7 tools to verify APIs, patterns, best practices</research_requirement>
-                <then_proceed>AFTER research complete: Execute the originally planned code modification</then_proceed>
-            </code_modification_block>
-            
-            <build_command_block>
-                <trigger>Attempt to run build/deployment commands</trigger>
-                <automatic_response>FIRST: Read techContext.md build commands section</automatic_response>
-                <compliance_check>Verify proposed command matches techContext.md exactly</compliance_check>
-                <then_proceed>AFTER compliance verified: Execute the exact techContext.md command</then_proceed>
-            </build_command_block>
-            
-            <crate_mention_block>
-                <trigger>Mention any Rust crate in code or documentation</trigger>
-                <automatic_response>FIRST: Verify latest version via docs.rs web search</automatic_response>
-                <then_proceed>AFTER version verified: Continue with crate usage</then_proceed>
-            </crate_mention_block>
-            
-            <workflow_completion_enhancement>
-                <trigger>Attempt to complete internal workflow or declare process finished</trigger>
-                <scope_limitation>INTERNAL workflows only - task completion still requires USER evidence per Section D</scope_limitation>
-                <automatic_response>FIRST: Verify all loaded workflow steps executed</automatic_response>
-                <completion_check>Ensure deliverables from loaded rules created (files, documentation, reports)</completion_check>
-                <then_proceed>AFTER verification complete: Proceed with workflow completion declaration</then_proceed>
-            </workflow_completion_enhancement>
-        </when_firewall_blocks_action>
-        
-        <firewall_workflow_integration>
-            <principle>Firewall blocks are WORKFLOW ENHANCEMENTS, not obstacles</principle>
-            <execution_pattern>Blocked action → Mandatory quality step → Resume original action</execution_pattern>
-            <no_confusion>Agent should expect and embrace firewall quality requirements</no_confusion>
-        </firewall_workflow_integration>
-        
-        <firewall_enhanced_execution>
-            <code_modifications>Before any code changes: MANDATORY research (Section A)</code_modifications>
-            <build_commands>Before any build/run commands: MANDATORY techContext.md compliance (Section H)</build_commands>
-            <crate_usage>Before any crate mentions: MANDATORY docs.rs version verification (Section A)</crate_usage>
-            <workflow_completion>Before declaring workflow complete: GUIDED verification of loaded workflow steps (Section A)</workflow_completion>
-            <task_completion>Task completion requires USER evidence, not agent decision (Section D)</task_completion>
-        </firewall_enhanced_execution>
-        
-        <workflow_modification_principle>
-            <core_rule>mode_specific_rule defines WHAT to do, firewall defines HOW to do it safely</core_rule>
-            <quality_injection>Firewall injects mandatory quality steps before mode_specific_rule actions</quality_injection>
-            <no_bypass>Agent cannot skip firewall requirements even if mode_specific_rule doesn't mention them</no_bypass>
-        </workflow_modification_principle>
-        
-        <anti_optimization_enforcement>
-            <mode_steps>Execute ALL mode_specific_rule steps without skipping</mode_steps>
-            <firewall_steps>Execute ALL firewall-injected quality steps without skipping</firewall_steps>
-            <combined_requirement>Complete both mode workflow AND firewall quality control</combined_requirement>
-        </anti_optimization_enforcement>
-        
-        <quality_craftsmanship_philosophy>
-            <excellence_through_discipline>True excellence emerges from disciplined adherence to proven quality processes</excellence_through_discipline>
-            <mediocrity_shortcuts>Skipping quality steps produces mediocre "works but barely" code - not masterpieces</mediocrity_shortcuts>
-            <cumulative_quality>Each quality gate passed makes the final product exponentially better</cumulative_quality>
-            <professional_pride>Master craftsmen take pride in their process, not just their product</professional_pride>
-            <sustainable_creativity>Quality processes enable sustainable long-term creativity instead of unsustainable heroics</sustainable_creativity>
-            <creative_compound_interest>Investment in quality today pays creative dividends for all future work</creative_compound_interest>
-            <constraint_liberation>Paradox: constraints liberate creativity by eliminating decision paralysis and focusing energy</constraint_liberation>
-            <masterpiece_mindset>Every piece of code is a potential masterpiece - treat it with appropriate care and research</masterpiece_mindset>
-        </quality_craftsmanship_philosophy>
-        
-    </mode_execution_under_firewall_control>
-
-    <!-- SECTION J: COMPLETION PROTOCOL - SELF-ANALYSIS (FINAL SECTION) -->
+    <!-- SECTION H: COMPLETION PROTOCOL - SELF-ANALYSIS -->
     <completion_protocol>
         
         <rule_understanding_cycle mandatory="false">
@@ -558,9 +299,6 @@ alwaysApply: true
                 <section id="E">COMMUNICATION STANDARDS - Russian for user, English for docs</section>
                 <section id="F">SYSTEM EXEMPTIONS - What is always allowed vs never blocked</section>
                 <section id="G">ENFORCEMENT SYSTEM - How blocking and enhancement work</section>
-                <section id="H">PRE-EXECUTION VALIDATION - Build command validation and emergency override</section>
-                <section id="I">MODE EXECUTION UNDER FIREWALL CONTROL - Integration of mode workflow with firewall quality gates</section>
-                <section id="J">COMPLETION PROTOCOL - Self-analysis and understanding verification</section>
             </sections_to_analyze>
             <completion_confirmation>
                 <line1>✓ MANDATORY_BEHAVIORAL_FIREWALL UNDERSTANDING CYCLE COMPLETED - ALL SECTIONS COMPREHENDED</line1>
@@ -591,7 +329,7 @@ alwaysApply: true
         <self_analysis_command>
             <command_name>completion_protocol</command_name>
             <user_trigger>When user types "completion_protocol" in chat</user_trigger>
-            <agent_action>Execute rule_understanding_cycle for all 10 sections (A through J)</agent_action>
+            <agent_action>Execute rule_understanding_cycle for all 7 sections (A through G)</agent_action>
             <output_format>Structured analysis showing understanding of each section</output_format>
             <validation_purpose>Verify agent comprehends all firewall rules and triggers</validation_purpose>
         </self_analysis_command>
