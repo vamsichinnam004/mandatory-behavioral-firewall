@@ -1,4 +1,4 @@
-# 🛡️ MANDATORY_BEHAVIORAL_FIREWALL - Quality Control System
+# !!!ВЕРСИЯ ДЛЯ ТЕСТА В КОТОРОЙ РАБОТАЕТ РЕСЕРЧ ПЕРЕД ЛЮБЫМ ИЗМЕНЕНИЕМ КОДА АГЕНТОМ!!!🛡️ MANDATORY_BEHAVIORAL_FIREWALL - Quality Control System
 
 ## 📋 Описание
 
