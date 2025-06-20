@@ -33,10 +33,15 @@ alwaysApply: true
                 2. CHECK: Has research been conducted for this specific change?
                 3. BLOCK: If no research evidence found for the specific APIs/patterns being used
                 4. FORCE: Execute mandatory research before allowing modification
-                5. PROCEED: Only after research completed and evidence provided
+                5. ENFORCE: Research summary MUST be automatically included in code file as comment
+                6. PROCEED: Only after research completed and evidence included in file content
             </enforcement_logic>
             <research_requirement>MANDATORY verification of APIs, patterns, best practices BEFORE modification</research_requirement>
             <evidence_format>Research summary block at code beginning: /* RESEARCH SUMMARY: sources and key findings */</evidence_format>
+            <automatic_inclusion>Research summary MUST be automatically prepended to ALL code files during creation/modification</automatic_inclusion>
+            <file_creation_rule>When creating new code files: always include research summary as first comment block</file_creation_rule>
+            <chat_limitation>In chat show NOTHING beyond compliance audit - NO research summary, file notifications, code plans, hypotheses, or generated code</chat_limitation>
+            <context_preservation>All information available in created files, no chat noise needed</context_preservation>
             <no_bypass>Cannot bypass - research is MANDATORY before any code change</no_bypass>
         </active_research_enforcement>
         
@@ -135,7 +140,7 @@ alwaysApply: true
             <cross_rule_validation>
                 <build_command_check>If instruction involves build commands, MUST validate against techContext.md BEFORE claiming completion</build_command_check>
                 <compliance_verification>Show compliance with applicable firewall rules for each instruction</compliance_verification>
-                <research_integration>If instruction involves code/architecture, MUST show research evidence BEFORE claiming completion</research_integration>
+                <research_integration>If instruction involves code/architecture, research evidence goes to FILE only, not chat</research_integration>
                 <protected_zone_check>If instruction involves _code_base_/ access, MUST be marked as BLOCKED with explanation</protected_zone_check>
                 <compliance_matrix>
                     <for_each_instruction>
@@ -150,7 +155,7 @@ alwaysApply: true
                 <trigger>Before assistant message</trigger>
                 <checks>
                     1. Always → require compliance audit for message
-                    2. If code modification planned → require research evidence summary
+                    2. If code modification planned → research evidence goes to file only
                     3. If build commands used → require techContext.md compliance check
                     4. If instructions incomplete → block all tool calls
                     5. If examples not followed exactly → block response
