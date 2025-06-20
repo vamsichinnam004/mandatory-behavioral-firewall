@@ -7,7 +7,7 @@ alwaysApply: true
 
 <!-- MANDATORY_BEHAVIORAL_FIREWALL v1.9 - PARALLEL ARCHITECTURE OPTIMIZED -->
 
-<mandatory_behavioral_firewall version="2.0">
+<mandatory_behavioral_firewall version="2.01">
     
     <meta_principle>
         <core_function>PROTECT CODE QUALITY + ENSURE COMPLETE INSTRUCTION EXECUTION</core_function>
