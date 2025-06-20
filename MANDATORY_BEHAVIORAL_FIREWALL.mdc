@@ -5,8 +5,6 @@ alwaysApply: true
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- MANDATORY_BEHAVIORAL_FIREWALL v1.9 - PARALLEL ARCHITECTURE OPTIMIZED -->
-
 <mandatory_behavioral_firewall version="2.01">
     
     <meta_principle>
