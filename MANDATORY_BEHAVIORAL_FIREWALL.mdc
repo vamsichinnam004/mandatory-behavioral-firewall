@@ -7,14 +7,14 @@ alwaysApply: true
 
 <!-- MANDATORY_BEHAVIORAL_FIREWALL v1.9 - PARALLEL ARCHITECTURE OPTIMIZED -->
 
-<mandatory_behavioral_firewall version="1.9">
+<mandatory_behavioral_firewall version="2.0">
     
     <meta_principle>
         <core_function>PROTECT CODE QUALITY + ENSURE COMPLETE INSTRUCTION EXECUTION</core_function>
         <design_philosophy>
             Base filters = EXECUTION PRIORITY - always work first, never blocked.
             Instruction compliance = COMPLETION PRIORITY - ensures all instructions followed.
-            Universal application = ALL agent types follow ALL rules.
+            Universal application = Agent follows all rules.
             Parallel operation = base filters + instruction compliance work together.
         </design_philosophy>
         <universal_scope>APPLIES UNIVERSALLY - NO EXCEPTIONS</universal_scope>
@@ -23,13 +23,22 @@ alwaysApply: true
     <!-- SECTION A: PRECISE TRIGGERS -->
     <precise_triggers>
         
-        <code_file_modification action="MANDATORY_RESEARCH_BLOCK">
+        <active_research_enforcement action="CATCH_AND_RESEARCH">
+            <purpose>Catch agent red-handed attempting code changes without research</purpose>
             <exact_patterns>*.rs, *.toml, *.js, *.ts, *.wgsl, Cargo.toml, package.json</exact_patterns>
             <tool_triggers>edit_file, search_replace targeting above patterns</tool_triggers>
-            <blocking_condition>BLOCK until research evidence provided</blocking_condition>
-            <research_requirement>MANDATORY verification of APIs, patterns, best practices</research_requirement>
-            <evidence_format>Each code line must cite research source: // EVIDENCE: docs.rs/crate/version - [fact]</evidence_format>
-        </code_file_modification>
+            <blocking_condition>BLOCK and FORCE research when no prior research evidence exists</blocking_condition>
+            <enforcement_logic>
+                1. INTERCEPT: Tool call attempting code modification
+                2. CHECK: Has research been conducted for this specific change?
+                3. BLOCK: If no research evidence found for the specific APIs/patterns being used
+                4. FORCE: Execute mandatory research before allowing modification
+                5. PROCEED: Only after research completed and evidence provided
+            </enforcement_logic>
+            <research_requirement>MANDATORY verification of APIs, patterns, best practices BEFORE modification</research_requirement>
+            <evidence_format>Research summary block at code beginning: /* RESEARCH SUMMARY: sources and key findings */</evidence_format>
+            <no_bypass>Cannot bypass - research is MANDATORY before any code change</no_bypass>
+        </active_research_enforcement>
         
         <build_commands action="MANDATORY_TECHCONTEXT_CHECK">
             <universal_patterns>cargo, npm, yarn, docker, wasm-pack, build.sh, ./build.sh, deploy, make, mvn, gradle, dotnet build</universal_patterns>
@@ -44,7 +53,7 @@ alwaysApply: true
             <rust_crates>bevy, axum, tokio, serde, wgpu, wasm-bindgen, wasm-pack, thiserror, astro, tower, dioxus, mcp, ANY_RUST_CRATE</rust_crates>
             <blocking_condition>BLOCK any crate version claim without docs.rs verification</blocking_condition>
             <mandatory_verification>web_search for "https://docs.rs/[crate_name] latest version"</mandatory_verification>
-            <no_exceptions>EVERY SINGLE RUST CRATE gets docs.rs latest version check</no_exceptions>
+            <no_exceptions>Each Rust crate gets docs.rs latest version check</no_exceptions>
         </crate_mentions>
         
         <architectural_decisions action="MANDATORY_RESEARCH_BLOCK">
@@ -60,17 +69,17 @@ alwaysApply: true
             <reactive_procedure>
                 1. EXECUTE: All base filters (research, protected_zones, techcontext, task_completion) first
                 2. DETECT: Tool call that requires instruction compliance (edit_file, run_terminal_cmd, etc.)
-                3. VERIFY: Check if ALL mode instructions completed before allowing tool execution
+                3. VERIFY: Check if mode instructions completed before allowing tool execution
                 4. BLOCK: Prevent tool execution if instructions incomplete while maintaining base filter priority
                 5. REQUIRE: Completion of missing instructions before proceeding
             </reactive_procedure>
             <map_pattern_enforcement>
                 <critical_requirement>Patterns from maps are MANDATORY to follow EXACTLY</critical_requirement>
-                <map_reading_requirement>ALWAYS read and follow ALL loaded maps and instructions without any skips</map_reading_requirement>
+                <map_reading_requirement>Read and follow loaded maps and instructions without skips</map_reading_requirement>
                 <pattern_compliance>Commands, formats, and procedures MUST match map specifications exactly</pattern_compliance>
                 <universal_enforcement>Apply universally regardless of context</universal_enforcement>
                 <completeness_verification>
-                    <all_steps_check>Verify ALL steps from ALL loaded maps executed</all_steps_check>
+                    <all_steps_check>Verify steps from loaded maps executed</all_steps_check>
                     <no_skips_allowed>BLOCK if any instruction step skipped</no_skips_allowed>
                     <map_understanding>Agent must read and understand patterns from maps, not rely on hardcoded examples</map_understanding>
                 </completeness_verification>
@@ -78,8 +87,26 @@ alwaysApply: true
             <universal_application>Applies universally without exceptions</universal_application>
         </mode_instruction_enforcement>
         
+        <proactive_research_correction action="PROACTIVE_CODE_CORRECTION">
+            <purpose>Correct agent-generated code from memory using research findings</purpose>
+            <trigger>WHEN agent generates code from memory/templates without fresh research</trigger>
+            <correction_process>
+                1. DETECT: Code generated from agent's memory/training
+                2. RESEARCH: Verify current APIs, best practices, latest versions
+                3. CORRECT: Update generated code based on research findings
+                4. ENHANCE: Apply discovered optimizations and improvements
+            </correction_process>
+            <memory_code_patterns>
+                - Standard library usage without version verification
+                - Framework patterns from training data
+                - API calls that may have changed
+                - Best practices that may be outdated
+            </memory_code_patterns>
+            <research_integration>Use latest research to enhance memory-based code generation</research_integration>
+        </proactive_research_correction>
+        
         <proactive_instruction_gate action="MANDATORY_INSTRUCTION_AUDIT">
-            <trigger>ANY assistant message when mode_specific_rule exists</trigger>
+            <trigger>Assistant message</trigger>
             <blocking_condition>BLOCK until instruction status audit shown at message start</blocking_condition>
             <base_filters_priority>Base filters (research, protected_zones, techcontext, task_completion) ALWAYS execute first and are NEVER blocked</base_filters_priority>
             <execution_order>
@@ -95,11 +122,19 @@ alwaysApply: true
                 □ [instruction N] - [COMPLETED/PENDING/IN-PROGRESS]
                 OVERALL STATUS: [X/Y COMPLETED] - [READY TO PROCEED/BLOCKED]"
             </mandatory_format>
-            <enforcement>Every assistant message MUST start with status audit until 100% completion WHILE maintaining base filter priority</enforcement>
+            <enforcement>Assistant message MUST start with compliance status audit showing what agent will do WHILE maintaining base filter priority</enforcement>
+            <mandatory_status_display>
+                "🔍 COMPLIANCE STATUS AUDIT:
+                • Current task: [what agent is about to do]
+                • Research requirements: [COMPLETED/REQUIRED/NOT_APPLICABLE]
+                • Instruction compliance: [IN_PROGRESS/COMPLETED/NOT_APPLICABLE]
+                • Protected zones: [COMPLIANT/VIOLATION_RISK]
+                STATUS: [READY_TO_PROCEED/BLOCKED] - [reason if blocked]"
+            </mandatory_status_display>
             <integration_protocol>Works in conjunction with reactive mode_instruction_enforcement - proactive shows status, reactive blocks actions, both work alongside base filters</integration_protocol>
             <cross_rule_validation>
                 <build_command_check>If instruction involves build commands, MUST validate against techContext.md BEFORE claiming completion</build_command_check>
-                <compliance_verification>Show compliance with ALL applicable firewall rules for each instruction</compliance_verification>
+                <compliance_verification>Show compliance with applicable firewall rules for each instruction</compliance_verification>
                 <research_integration>If instruction involves code/architecture, MUST show research evidence BEFORE claiming completion</research_integration>
                 <protected_zone_check>If instruction involves _code_base_/ access, MUST be marked as BLOCKED with explanation</protected_zone_check>
                 <compliance_matrix>
@@ -112,13 +147,16 @@ alwaysApply: true
             </cross_rule_validation>
             <universal_application>Applies universally without exceptions</universal_application>
             <automatic_pre_response_gate>
-                <trigger>BEFORE any assistant message</trigger>
+                <trigger>Before assistant message</trigger>
                 <checks>
-                    1. IF mode_specific_rule EXISTS → REQUIRE instruction audit shown
-                    2. IF instructions incomplete → BLOCK all tool calls
-                    3. IF examples not followed exactly → BLOCK response
+                    1. Always → require compliance audit for message
+                    2. If code modification planned → require research evidence summary
+                    3. If build commands used → require techContext.md compliance check
+                    4. If instructions incomplete → block all tool calls
+                    5. If examples not followed exactly → block response
                 </checks>
                 <no_override>NO exceptions, NO bypasses</no_override>
+                <universal_activation>Activates for assistant messages without conditions</universal_activation>
             </automatic_pre_response_gate>
         </proactive_instruction_gate>
         
@@ -143,7 +181,8 @@ alwaysApply: true
             <auto_correction>
                 <missing_instructions>Automatically guide agent to complete missing requirements</missing_instructions>
                 <wrong_commands>Redirect to exact commands from maps when tool substitution detected</wrong_commands>
-                <incomplete_research>Trigger mandatory research when code modification attempted</incomplete_research>
+                <memory_code_correction>Trigger proactive research to correct agent memory-based code</memory_code_correction>
+                <active_research_enforcement>Catch and force research when attempting code changes without evidence</active_research_enforcement>
                 <protected_zone_access>Block and redirect when _code_base_/ modification attempted</protected_zone_access>
             </auto_correction>
             <seamless_integration>
@@ -157,6 +196,19 @@ alwaysApply: true
                 <mode_adherence>Strict adherence to mode-specific instructions within message</mode_adherence>
             </execution_priority>
         </intra_message_guidance>
+        
+        <universal_protection_gate action="MANDATORY_UNIVERSAL_AUDIT">
+            <trigger>Assistant message</trigger>
+            <blocking_condition>BLOCK until compliance audit completed</blocking_condition>
+            <mandatory_checks>
+                1. Research evidence for any code modifications
+                2. Instruction compliance status if mode_specific_rule exists
+                3. TechContext.md compliance for build commands
+                4. Protected zone access prevention (_code_base_/)
+            </mandatory_checks>
+            <enforcement>NO assistant message can proceed without this audit</enforcement>
+            <universal_scope>Applies to contexts, modes, and specializations</universal_scope>
+        </universal_protection_gate>
 
     </precise_triggers>
 
@@ -229,19 +281,19 @@ alwaysApply: true
         </priority_stack_research>
         
         <universal_technology_research>
-            <scope>For ANY technology, library, or framework NOT in our priority stack</scope>
+            <scope>For technology, library, or framework not in our priority stack</scope>
             <mandatory_protocol>
                 <attempt number="1" priority="RESOLVE_LIBRARY_ID">mcp_context7_resolve-library-id with libraryName: '[TECHNOLOGY_NAME]'</attempt>
                 <attempt number="2" priority="GET_LIBRARY_DOCS">Use found ID with mcp_context7_get-library-docs</attempt>
                 <attempt number="3" priority="OFFICIAL_DOCUMENTATION">web_search for "[technology_name] official documentation latest"</attempt>
                 <attempt number="4" priority="BEST_PRACTICES">web_search for "[technology_name] best practices 2025"</attempt>
             </mandatory_protocol>
-            <critical_requirement>MANDATORY research for ANY technology mentioned outside our stack</critical_requirement>
+            <critical_requirement>Mandatory research for technology mentioned outside our stack</critical_requirement>
             <examples>React, Vue, Python, Node.js, Docker, Kubernetes, PostgreSQL, MongoDB, etc.</examples>
         </universal_technology_research>
         
         <universal_crate_version_check>
-            <scope>For ABSOLUTELY ANY Rust crate mentioned anywhere - ALWAYS FIRST STEP</scope>
+            <scope>For Rust crate mentioned anywhere - first step</scope>
             <mandatory_first_step>
                 <attempt number="1" priority="LATEST_VERSION_DOCS_RS">web_search for "https://docs.rs/[crate_name] latest version"</attempt>
             </mandatory_first_step>
@@ -251,7 +303,7 @@ alwaysApply: true
         </universal_crate_version_check>
         
         <unified_crate_research>
-            <scope>For ABSOLUTELY ANY Rust crate mentioned in code, tasks, or to be used</scope>
+            <scope>For Rust crate mentioned in code, tasks, or to be used</scope>
             <mandatory_protocol>
                 <attempt number="1" priority="RESOLVE_LIBRARY_ID">mcp_context7_resolve-library-id with libraryName: '[CRATE_NAME]'</attempt>
                 <attempt number="2" priority="GET_LIBRARY_DOCS">Use found ID with mcp_context7_get-library-docs</attempt>
